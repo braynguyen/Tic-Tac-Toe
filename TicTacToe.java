@@ -1,25 +1,13 @@
 public class TicTacToe {
-    private String[][] exBoard = {{"0,0", "|", "0,2", "|", "0,4"}, {"---", "---", "---", "-", "-"}, {"2,0", "|", "2,2", "|", "2,4"}, {"---", "---", "---", "-", "-"}, {"4,0", "|", "4,2", "|", "4,4"}};
     private String[][] board = {{"0,0", "|", "0,2", "|", "0,4"}, {"---", "---", "---", "-", "-"}, {"2,0", "|", "2,2", "|", "2,4"}, {"---", "---", "---", "-", "-"}, {"4,0", "|", "4,2", "|", "4,4"}};
     private String turn;
     private boolean gameOver;
-    private String winner;
     private int count;
 
     public TicTacToe() {
         turn = " X ";
         gameOver = false;
-        winner = null;
         count = 0;
-    }
-
-    public void displayExBoard() {
-        for(int r = 0; r < exBoard.length; r++){
-            for(int c = 0; c < exBoard[0].length; c++){
-                System.out.print(exBoard[r][c]);
-            }
-            System.out.println();
-        }
     }
 
     public void displayBoard() {
@@ -52,6 +40,7 @@ public class TicTacToe {
         }
         else {
             System.out.println("Invalid spot. Try again.");
+            displayBoard();
         }
     }
 
@@ -87,20 +76,18 @@ public class TicTacToe {
                 
             if (line.equals(" X  X  X ")) {    
                 gameOver = true;
-                winner = "X";
                 System.out.println("Winner: X");
             }
 
             if (line.equals(" O  O  O ")) {    
                 gameOver = true;
-                winner = "O";
                 System.out.println("Winner: O");
             }
         }
         
         if(count >= 9){
             gameOver = true;
-            winner = "Tie";
+            System.out.println("Tie");
         }
         
     }

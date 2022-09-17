@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class main {
     public static void main (String[] args) {
         TicTacToe test = new TicTacToe();
-        test.displayExBoard();
+        test.displayBoard();
         Scanner s = new Scanner(System.in);
         System.out.println("To play: input first number in a square and hit enter, then input second number in a square and hit enter.");
         while (!test.getGameOver()) {
