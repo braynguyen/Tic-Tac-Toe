@@ -6,6 +6,7 @@ public class main {
         test.displayBoard();
         Scanner s = new Scanner(System.in);
         System.out.println("To play: input first number in a square and hit enter, then input second number in a square and hit enter.");
+        
         while (!test.getGameOver()) {
             System.out.println();
             System.out.println("Input first number");
